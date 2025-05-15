@@ -13,6 +13,9 @@ app.use(express.json())
 app.use(cors({ origin: process.env.CLIENT_URL, methods: ["GET", "POST", "PUT", "DELETE"] }))
 app.use(cookieParser())
 
+app.get('/', (req, res) => {
+    res.send('Salom, Vercel!');
+});
 app.use('/api/v1', require('./routes/index'))
 app.use(errorMiddlewares)
 
